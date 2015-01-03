@@ -1,0 +1,7 @@
+#lang scheme
+(define (capas inicio final)
+  (cond
+    ((> (expt inicio 2) final) (- inicio 1))
+    (else (+ 1 (capas (+ inicio 1) final)))
+  )
+)
