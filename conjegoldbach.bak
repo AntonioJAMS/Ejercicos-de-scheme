@@ -10,6 +10,15 @@
     ((= (modulo num i) 0) (+ 1 (veriprimo (+ i 1) num)))
     (else (veriprimo (+ i 1) num))))
 
+(define (siguiente_primo num)
+  (siguiente 0 num))
+
+(define (siguiente i num)
+  (cond
+    ((= i 2) (- num 1))
+    ((= (primo num) 1) (siguiente (+ i 1) (+ num 1)))
+    (else (siguiente i (+ num i)))))
+
 (define (conjetura limite)
   (conje 4 limite))
 
